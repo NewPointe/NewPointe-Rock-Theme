@@ -148,6 +148,7 @@ build.description = "Builds all files";
 export async function packageTheme() {
     await waitOnStream(gulp.src("./build/theme/**/*").pipe(gulp.dest(`./build/package/content/Themes/${THEME_FILE_NAME}/`)));
     await waitOnStream(gulp.src("./build/package/**/*").pipe(gulp_zip(`./build/${THEME_FILE_NAME}.plugin`)).pipe(gulp.dest(".")));
+    console.log(`Exported plugin to '${path.resolve(`./build/${THEME_FILE_NAME}.plugin`)}'`);
 }
 packageTheme.description = "Packages the theme into a Rock plugin";
 
