@@ -6,6 +6,7 @@
         "build": "gulp",
         "watch": "gulp watch",
         "clean": "gulp clean",
+        "buildProd": "gulp buildProd",
         "package": "gulp packageTheme",
         "link": "gulp link"
     },

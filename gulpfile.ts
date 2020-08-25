@@ -89,9 +89,10 @@ clean.description = "Cleans the build folders";
  * @param watch If webpack should watch the files
  */
 function compile_typescript(watch = false, env = "development") {
-    return gulp.src("./src/Scripts/main.ts")
+    return gulp.src("./Scripts/main.ts")
         .pipe(named())
         .pipe(webpackStream({ watch, ...webpackConfig(env) }, webpack as any))
+        .pipe(gulp.dest('./Scripts/'))
         .pipe(gulp.dest('./build/theme/Scripts/'));
 }
 
@@ -104,10 +105,18 @@ export function typescript() {
 typescript.description = "Compiles TypeScript files";
 
 /**
+ * Compiles TypeScript files
+ */
+export function typescriptProd() {
+    return compile_typescript(false, "production");
+}
+typescriptProd.description = "Compiles TypeScript files";
+
+/**
  * Compiles sass files
  */
 export function copyStyles() {
-    return gulp.src("./src/Styles/**/*")
+    return gulp.src("./Styles/**/*")
         .pipe(gulp.dest("./build/theme/Styles"));
 }
 copyStyles.description = "Copies less styles";
@@ -116,7 +125,7 @@ copyStyles.description = "Copies less styles";
  * Copies static assets
  */
 export function copyAssets() {
-    return gulp.src("./src/Assets/**/*")
+    return gulp.src("./Assets/**/*")
         .pipe(gulp.dest("./build/theme/Assets"));
 }
 copyAssets.description = "Copies static assets";
@@ -125,7 +134,7 @@ copyAssets.description = "Copies static assets";
  * Copies layout files
  */
 export function copyLayouts() {
-    return gulp.src("./src/Layouts/**/*")
+    return gulp.src("./Layouts/**/*")
         .pipe(gulp.dest("./build/theme/Layouts"));
 }
 copyLayouts.description = "Copies layout files";
@@ -139,8 +148,14 @@ copy.description = "Copies files";
 /**
  * Builds all files
  */
-export const build = gulp.parallel(copyStyles, typescript);
+export const build = gulp.parallel(copy, typescript);
 build.description = "Builds all files";
+
+/**
+ * Builds all files
+ */
+export const buildProd = gulp.parallel(copy, typescriptProd);
+buildProd.description = "Builds all files";
 
 /**
  * Packages the theme into a Rock plugin
@@ -163,7 +178,7 @@ export async function link() {
     else {
         console.warn(`Linking folder '${folderToLink}'`);
         try {
-            await fsp.symlink(path.resolve("./build/theme"), path.join(folderToLink, THEME_FILE_NAME), 'junction');
+            await fsp.symlink(path.resolve("."), path.join(folderToLink, THEME_FILE_NAME), 'junction');
         }
         catch (e) {
             console.error(`Failed to create symlink: ${e.message}`);
@@ -190,7 +205,7 @@ watchTypescript.description = "Watches TypeScript files";
  * Compiles sass files
  */
 export function watchStyles() {
-    return closeOnExit(gulp.watch("./src/Styles/**/*", copyStyles));
+    return closeOnExit(gulp.watch("./Styles/**/*", copyStyles));
 }
 watchStyles.description = "Watches less styles";
 
@@ -198,7 +213,7 @@ watchStyles.description = "Watches less styles";
  * Copies static assets
  */
 export function watchAssets() {
-    return closeOnExit(gulp.watch("./src/Assets/**/*", copyAssets));
+    return closeOnExit(gulp.watch("./Assets/**/*", copyAssets));
 }
 watchAssets.description = "Watches static assets";
 
@@ -206,7 +221,7 @@ watchAssets.description = "Watches static assets";
  * Copies layout files
  */
 export function watchLayouts() {
-    return closeOnExit(gulp.watch("./src/Layouts/**/*", copyLayouts));
+    return closeOnExit(gulp.watch("./Layouts/**/*", copyLayouts));
 }
 watchLayouts.description = "Watches layout files";
 
@@ -227,6 +242,6 @@ watch.description = "Watches all files";
 //             Default            //
 // ============================== //
 
-const defaultTask = gulp.series(clean, copy, build);
+const defaultTask = gulp.series(clean, build);
 defaultTask.description = "Builds and packages the app";
 export default defaultTask;
