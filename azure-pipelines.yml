@@ -26,6 +26,6 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/build/NewPointe2020.plugin'
+    PathtoPublish: './build/NewPointe2020.plugin'
     ArtifactName: 'NewPointe2020.plugin'
     publishLocation: 'Container'
