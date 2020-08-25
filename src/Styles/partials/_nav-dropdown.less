@@ -1,0 +1,56 @@
+// Universal styles
+.nav-caret {
+    font-family: 'Icons' !important;
+    font-weight: normal;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+
+.nav-caret::after {
+    content: "\e911";
+}
+
+.nav-dropdown-content {
+    display: none;
+}
+
+.nav-dropdown-toggle {
+    display: flex;
+    align-items: center;
+}
+
+
+    .nav-dropdown.open {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #404040;
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+
+        & > .nav-dropdown-toggle {
+            color: white;
+            background-color: gray;
+            padding: 50px 40px 20px;
+
+            .nav-caret {
+                transform: rotate(180deg);
+                order: -1;
+            }
+        }
+
+        & > .nav-dropdown-content {
+            display: block;
+            margin: auto;
+            
+        }
+    }
+

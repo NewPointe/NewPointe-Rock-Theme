@@ -1,0 +1,46 @@
+<div id="blogpost">
+    <div class="row">
+
+        <div class="col-sm-8 col-md-6 col-sm-offset-1 col-md-offset-2">
+
+            <h2 class="blogpost-title">{{ Item.Title }}</h2>
+
+            {% assign Item_Subtitle = Item | Attribute:'Subtitle' %}
+            {% if Item_Subtitle != '' %}
+                <div class='intro-text'>{{ Item_Subtitle | StripHtml }}</div>
+            {% endif %}
+
+            <p class='blogpost-date'><strong>{{ Item.StartDateTime | Date:'MMMM d, yyyy' }}</strong></p>
+
+            {% assign Item_VimeoId = Item | Attribute:'VimeoId' %}
+            {% if Item_VimeoId != empty %}
+                <div class="embed-container embed-responsive embed-responsive-16by9">
+                    <iframe src="https://player.vimeo.com/video/{{ Item_VimeoId }}?wmode=transparent" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+                </div>
+            {% endif %}
+
+            {{ Item.Content }}
+
+        </div>
+
+        <div class="col-sm-1 col-sm-offset-2">
+            <div class="sidebar">
+
+              {% capture ShareText %}Check out {{ item.Title }} at NewPointe.org{% endcapture %}
+              <div class="sharelinks_toolbox">
+                  <a title="Share to Facebook" href="https://www.facebook.com/sharer/sharer.php?quote={{ ShareText | UrlEncode }}&amp;u={{ 'Global' | Page:'Url' | UrlEncode }}">
+                      <i class="fa fa-fw fa-facebook-square fa-lg"></i>
+                  </a>
+                  <a title="Share to Twitter" href="https://twitter.com/intent/tweet?text={{ ShareText | UrlEncode }}&amp;url={{ 'Global' | Page:'Url' | UrlEncode }}">
+                      <i class="fa fa-fw fa-twitter fa-lg"></i>
+                  </a>
+                  <a title="Share via Email" href="mailto:?subject={{ ShareText | UrlEncode }}&amp;body={{ 'Global' | Page:'Url' | UrlEncode }}">
+                      <i class="fa fa-fw fa-envelope fa-lg"></i>
+                  </a>
+              </div>
+        
+            </div>
+        </div>
+
+    </div>
+</div>

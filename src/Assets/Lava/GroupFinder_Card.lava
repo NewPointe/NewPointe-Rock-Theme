@@ -1,0 +1,62 @@
+{% capture _ %}
+
+    {% assign GroupId = Group.Id %}
+    {% capture GroupDetailsLink %}{[ FormatLink url:'{{ LinkedPages.GroupDetailPage }}' keys:'GroupId' ]}{% endcapture %}
+
+    {% assign LineFeed = "&#x0A;" | HtmlDecode %}
+
+    {% assign MeetingTime = Group.Schedule.FriendlyScheduleText %}
+    {% if MeetingTime contains LineFeed %}{% assign MeetingTime = null %}{% endif %}
+
+    {% assign MeetingLocation = Group.GroupLocations | First | Property:'Location' %}
+
+    {% capture GroupSubtitle %}
+
+        {% if MeetingTime != null %}{{ MeetingTime }}{% endif %}
+
+        {% if MeetingTime != null and MeetingLocation != null %} | {% endif %}
+
+        {% if MeetingLocation != null %}{{ MeetingLocation.City }}, {{ MeetingLocation.State }}{% endif %}
+
+    {% endcapture %}
+
+
+    {% assign GroupTypes = Group | Attribute:'Hub' | Split:',' %}
+    {% assign GroupCharacteristics = Group | Attribute:'GroupCharacteristics' | Split:',' %}
+
+{% endcapture %}
+
+
+     
+{% if clickable %}
+    <a href="{{ GroupDetailsLink }}" class="card group-card">
+{% else %}
+    <div class="card group-card">
+{% endif %}
+
+    <div class="card-body">
+
+        <h1>{{ Group.Name }}</h1>
+        <h4 class="text-muted">{{ GroupSubtitle }}</h4>
+        <p>{{ Group | Attribute:'GroupGoal' }}</p>
+
+        <p style="line-height: 1.5;">
+            <span class="label label-primary">{{ Group.Campus.Name }}</span>
+            {% for Tag in GroupTypes %}
+                <span class="label label-info">{{ Tag }}</span>
+            {% endfor %}
+            {% for Tag in GroupCharacteristics %}
+                <span class="label label-default">{{ Tag }}</span>
+            {% endfor %}
+        </p>
+        {% if showbutton %}
+            <a class="btn btn-primary btn-sm btn-block" href="{{ GroupDetailsLink }}">Learn More</a>
+        {% endif %}
+
+    </div>
+
+{% if clickable %}
+    </a>
+{% else %}
+    </div>
+{% endif %}

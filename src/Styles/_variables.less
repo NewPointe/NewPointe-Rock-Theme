@@ -1,0 +1,180 @@
+
+// -------------------------------------------------- //
+//                Bootstrap Variables                 //
+// -------------------------------------------------- //
+
+@box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+@gray-base:                 #000;
+@gray-darker:               #282828;
+@gray-dark:                 #404040;
+@gray:                      #555555;
+@gray-light:                #808080;
+@gray-lighter:              #B3B3B3;
+
+@brand-primary:             #61a744;
+@brand-inverted:            #fff;
+
+@black:                     #000;
+@white:                     #EFEFEF;
+@truewhite:                 #FFFFFF;
+@orange:                    #F6921E;
+@purple:                    #662D91;
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+@body-bg:                   @truewhite;
+//** Global text color on `<body>`.
+@text-color:                #555;
+
+//** Global textual link color.
+@link-color:                @brand-primary;
+//** Link hover color set via `darken()` function.
+@link-hover-color:          @brand-primary;
+//** Link hover decoration.
+@link-hover-decoration:     underline;
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+@font-family-sans-serif:    "Monsterrat", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+@font-family-narrow:        "Monsterrat", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+@font-size-base:            20px;
+@font-size-large:           ceil((@font-size-base * 1.5));
+@font-size-small:           ceil((@font-size-base * 0.85));
+
+@font-size-h1:              4em;
+@font-size-h2:              3em;
+@font-size-h3:              2.5em;
+@font-size-h4:              2em;
+@font-size-h5:              1.5em;
+@font-size-h6:              1.25em;
+
+//** By default, this inherits from the `<body>`.
+@headings-font-weight:      900;
+@headings-color:            @gray-dark;
+
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+@padding-base-vertical:     10px;
+@padding-base-horizontal:   20px;
+
+@padding-large-vertical:    15px;
+@padding-large-horizontal:  30px;
+
+@border-radius-base:        0;
+@border-radius-large:       0;
+@border-radius-small:       0;
+
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+@btn-font-weight:           900;
+
+@btn-default-color:         #fff;
+@btn-default-bg:            @gray-lighter;
+@btn-default-border:        @gray-lighter;
+
+@btn-primary-color:         #fff;
+@btn-primary-bg:            @brand-primary;
+@btn-primary-border:        @btn-primary-bg;
+
+
+//== Forms
+//
+//##
+
+//** Default `.form-control` height
+@input-height-base:         (@line-height-computed + (@padding-base-vertical * 2));
+//** Large `.form-control` height
+@input-height-large:        (ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2));
+//** Small `.form-control` height
+@input-height-small:        (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2));
+
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// XL screen / wide desktop
+@screen-xl:                 1700px;
+@screen-xl-min:             @screen-xl;
+@screen-xl-desktop:         @screen-xl-min;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-lg-max:             (@screen-xl-min - 1);
+
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Padding between columns. Gets divided in half for the left and right.
+@grid-gutter-width:         32px;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+@grid-float-breakpoint:     @screen-md-min;
+
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+
+// Extra Large screen / wide desktop
+@container-xl-desktop:      (1640px + @grid-gutter-width);
+//** For `@screen-xl-min` and up.
+@container-xl:              @container-xl-desktop;
+
+
+//== Panels
+//
+//##
+
+@panel-bg:                  transparent;
+@panel-heading-padding:     15px;
+
+//** Border color for elements within panels
+@panel-inner-border:        transparent;
+@panel-footer-bg:           transparent;
+
+@panel-default-text:        @text-color;
+@panel-default-border:      transparent;
+@panel-default-heading-bg:  transparent;
+
+
+//== Type
+//
+//##
+
+//** Blockquote font size
+@blockquote-font-size:      @font-size-base;
+
+
+// -------------------------------------------------- //
+//                   Rock Variables                   //
+// -------------------------------------------------- //
+
+
+//// Header
+@header-text-color: @gray-dark;
+
+// Modals
+@modal-header-bg: #282828;
+@modal-header-text-color: #b3b3b3;
+@modal-footer-bg: #efefef;
+@modal-footer-text-color: #666;

@@ -1,0 +1,45 @@
+{
+    "name": "newpointe-2020",
+    "version": "1.0.0",
+    "description": "NewPointe Website Theme 2020",
+    "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "clean": "gulp clean",
+        "package": "gulp packageTheme",
+        "link": "gulp link"
+    },
+    "author": "Tyler Schrock <tschrock123@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/gulp": "^4.0.6",
+        "@types/gulp-sass": "^4.0.0",
+        "@types/gulp-sourcemaps": "0.0.32",
+        "@types/gulp-zip": "^4.0.1",
+        "@types/jquery": "^3.5.1",
+        "@types/webpack": "^4.41.21",
+        "@types/webpack-stream": "^3.2.11",
+        "@typescript-eslint/eslint-plugin": "^3.9.0",
+        "@typescript-eslint/parser": "^3.9.0",
+        "del": "^5.1.0",
+        "enquirer": "^2.3.6",
+        "eslint": "^7.6.0",
+        "gulp": "^4.0.2",
+        "gulp-sass": "^4.1.0",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-zip": "^5.0.2",
+        "node-sass": "^4.14.1",
+        "ts-loader": "^8.0.2",
+        "ts-node": "^8.10.2",
+        "typescript": "^3.9.7",
+        "vinyl-named": "^1.1.0",
+        "webpack": "^4.44.1",
+        "webpack-cli": "^3.3.12",
+        "webpack-stream": "^5.2.1"
+    },
+    "dependencies": {
+        "animate.js": "^2.0.2",
+        "jquery": "^3.5.1",
+        "popper.js": "^1.16.1"
+    }
+}

@@ -1,0 +1,172 @@
+
+// ------------------------------ //
+//      Mobile-First Styles       //
+// ------------------------------ //
+.subfooter {
+    background-color: @gray;
+}
+
+.page-footer {
+    background-color: @gray-darker;
+    color: @truewhite;
+    padding: 40px 0 20px;
+    text-align: center;
+    font-size: 0.75em;
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: @font-family-narrow;
+        margin-bottom: 0.75em;
+        color: @truewhite;
+        text-transform: uppercase;
+        display: none;
+        font-weight: 700;
+    }
+
+    h5 {
+        font-size: 1.555em;
+    }
+
+    a {
+        color: inherit;
+
+        &:hover {
+            color: @brand-primary;
+        }
+    }
+
+    .contact-info {
+        font-size: 1.083em;
+    }
+
+    .social-icons {
+        font-size: 1.333em;
+    }
+}
+
+.footerlogo {
+    display: block;
+    width: 68%;
+    margin: 0 auto 30px;
+}
+
+.footer-quick-links {
+    li {
+        display: inline-block;
+        margin: 0 3px 10px;
+        // Style as a button
+        a {
+            font-family: @font-family-narrow;
+            font-weight: bold;
+            font-size: 1.333em;
+            text-transform: uppercase;
+            display: inline-block;
+            border: solid 1px @white;
+            padding: 8px 16px;
+            color: @white;
+
+            &:hover, &:focus {
+                background-color: @brand-primary;
+                border-color: @brand-primary;
+                text-decoration: none;
+                color: @truewhite;
+            }
+        }
+    }
+}
+
+.copyright-credits {
+    padding: 15px 0;
+    color: @gray-light;
+    margin-top: 20px;
+
+    p {
+        margin: 0;
+    }
+
+    .copyright {
+        float: none;
+        text-align: center;
+    }
+
+    .credits {
+        text-align: center;
+    }
+}
+
+// ------------------------------ //
+//         Medium Screens         //
+// ------------------------------ //
+@media screen and (min-width: @screen-sm-min) {
+
+    .page-footer {
+        color: @gray-lighter;
+        padding: 50px 0 25px;
+        text-align: inherit;
+
+        h1, h2, h3, h4, h5, h6 {
+            display: block;
+        }
+
+        .social-icons,
+        .contact-info {
+            font-size: 1em;
+        }
+    }
+
+    .footerlogo {
+        width: 100%;
+        margin: 0;
+    }
+
+    .footer-quick-links {
+        li {
+            display: block;
+            margin: 0;
+            // Style as a link
+            a {
+                font-family: @font-family-base;
+                font-weight: inherit;
+                font-size: 1em;
+                text-transform: none;
+                border: none;
+                padding: 0;
+                color: @gray-lighter;
+
+                &:hover, &:focus {
+                    background: none;
+                    text-decoration: underline;
+                    color: @brand-primary;
+                }
+            }
+        }
+    }
+
+    .copyright-credits {
+        font-size: 0.75em;
+        border-top: solid 1px @gray-light;
+        margin-top: 40px;
+
+        .copyright {
+            float: left;
+            text-align: right;
+        }
+
+        .credits {
+            text-align: right;
+        }
+    }
+}
+
+// ------------------------------ //
+//         Large Screens          //
+// ------------------------------ //
+@media screen and (min-width: @screen-xl-min) {
+
+    .page-footer {
+        padding: 70px 0 35px;
+    }
+
+    .copyright-credits {
+        margin-top: 60px;
+    }
+}

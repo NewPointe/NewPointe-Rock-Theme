@@ -1,0 +1,10 @@
+<div class="footer-quick-links">
+    <h5>Quick Links</h5>
+    <ul class="list-unstyled">
+        {% for each item in Items %}
+            <li>
+                <a href="{{ item | Attribute: 'LinkUrl','RawValue' | Escape }}">{{ item.Title | Escape }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

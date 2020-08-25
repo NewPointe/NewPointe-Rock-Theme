@@ -1,0 +1,129 @@
+#zone-navigation {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1045; // The nav menu should be above everything except modal dialogs
+}
+
+
+@media (max-width: @screen-sm-max) {
+    #zone-navigation {
+        position: sticky;
+    }
+}
+
+.noheader #zone-navigation {
+    position: relative;
+    position: sticky;
+}
+
+.block-highlight #zone-navigation,
+.zone-highlight #zone-navigation {
+    position: relative;
+}
+
+.navbar {
+    position: relative;
+    border: none;
+    transition:
+        padding ease-in-out 300ms,
+        box-shadow ease-in-out 300ms,
+        background-color ease-in-out 300ms,
+        margin-bottom ease-in-out 300ms;
+    z-index: 100;
+    font-size: 1.1em;
+    font-family: "din-2014-narrow",sans-serif;
+    font-weight: 600;
+    color: #fff;
+    background-color: transparent;
+    padding: 0rem 2rem;
+}
+
+.navbar.noheader {
+    margin-bottom: 1.5rem;
+    background-color: #fff;
+    box-shadow: @box-shadow;
+}
+
+.navbar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+
+    // Bootstrap overrides
+    float: none;
+    &::before, &::after {
+        content: unset;
+    }
+}
+
+.navbar-nav > li > a {
+    color: inherit;
+    &:hover, &:focus {
+        color: @brand-primary;
+        background-color: transparent;
+    }
+}
+
+.navbar-brand {
+    // Bootstrap overrides
+    height: auto;
+    padding: 0 1em;
+    font-size: 1em;
+}
+
+.nav-logo {
+    display: block;
+    color: @brand-primary;
+    font-size: 3em;
+    margin: 1px 0;
+}
+
+.navbar-collapse {
+    flex-grow: 1;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.75em 1em;
+    font-size: 1.25em;
+    line-height: 1em;
+    color: @brand-primary;
+    background-color: transparent;
+    z-index: 100;
+}
+
+.navbar-toggle-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+}
+
+.navbar-toggle-content {
+    display: none;
+    background-color: #282828;
+    padding: 6.75em 2.75em;
+}
+
+.navbar.open {
+    .navbar-toggle-content {
+        display: inline-block;
+    }
+}
+
+.opaque .navbar {
+    padding: 0.5rem 2rem;
+    margin-bottom: 1.5rem;
+    color: gray;
+    background-color: #fff;
+    box-shadow: @box-shadow;
+}
+
+
+.block-highlight .navbar-toggle-content,
+.zone-highlight .navbar-toggle-content {
+    position: relative;
+}

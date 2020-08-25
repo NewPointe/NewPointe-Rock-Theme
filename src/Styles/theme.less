@@ -1,0 +1,362 @@
+
+// Load Master Styles
+// -------------------------
+@import "../../../Styles/Bootstrap/variables.less";
+@import "../../../Styles/_rock-core.less";
+@import "../../../Styles/_store.less";
+@import "../../../Styles/_rock-variables.less";
+@import "_variables";
+@import "_variable-overrides";
+@import "_print";
+
+@font-face {
+    font-family: 'Hipsterism';
+    src: url('../Assets/Fonts/Hipsterism/font.woff2') format('woff2'), url('../Assets/Fonts/Hipsterism/font.woff') format('woff');
+}
+
+/*
+    Rock Theme Styles
+
+    1. HTML Overrides
+    2. Bootstrap Overrides
+    3. Theme Styling
+    4. Responsive Overrides
+
+*/
+
+// 1. HTML Overrides
+// -------------------------
+
+html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+// 2. Bootstrap Overides
+// -------------------------
+
+.label {
+    display: inline-block;
+    padding: 0.35em 0.6em 0.45em;
+}
+
+// 3. Theme Styling
+// -------------------------
+
+@import "_fishhook-mixins.less";
+
+body > form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body > form > main {
+    flex-grow: 1;
+}
+
+
+
+// z-index Overrides
+// -------------------------
+
+/*
+
+    // The following styles are set directly on elements by Rock's js, so we
+    // can't really override them. I'm including them here for reference.
+
+    // On model open:
+
+    .modal-scrollable {
+        z-index: 1060;
+    }
+
+    .modal-backdrop {
+        z-index: 1050;
+    }
+
+    // On hover:
+
+    .block-configuration {
+        z-index: 1000;
+    }
+
+    // After hover:
+
+    .block-configuration {
+        z-index: 9001;
+    }
+
+*/
+
+// zone-configuration should match block-configuration
+.zone-configuration {
+    z-index: 1000;
+
+    &:hover {
+        z-index: 9001;
+    }
+}
+
+// The admin footer should be above most things, but below the nav menu and modal dialogs
+#cms-admin-footer {
+    z-index: 1040;
+}
+
+
+// Navigation
+// -------------------------
+
+.fullscreen-scrollable() {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+}
+
+
+
+// 4. Responsive Overrides
+// -------------------------
+main {
+    display: block;
+}
+
+.container {
+    @media (min-width: @screen-xl-min) {
+        width: @container-xl;
+    }
+}
+
+.modal {
+    .navbar-nav.contextsetter {
+        float: none;
+    }
+
+    .modal-body {
+        .btn {
+            font-size: 16px !important;
+            font-weight: normal !important;
+            border-width: 1px !important;
+        }
+    }
+}
+
+.lava-debug {
+    .panel-lavadebug {
+        li {
+            display: block !important;
+            margin: 0 !important;
+            text-transform: none !important;
+        }
+    }
+}
+
+#cms-admin-footer {
+    .btn {
+        padding: 7px 10px;
+    }
+}
+
+body.block-highlight,
+body.zone-highlight {
+    nav {
+        position: relative !important;
+    }
+}
+
+a:focus {
+    outline: none !important;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.list-icons {
+    list-style-type: none;
+    padding-left: 20px;
+
+    li {
+        position: relative;
+        margin-bottom: 1em;
+        padding-left: 35px;
+
+        @media (min-width: @screen-xl) {
+            padding-left: 45px;
+        }
+
+        i {
+            font-size: 1.4em;
+            position: absolute;
+            top: 2px;
+            left: 0;
+        }
+    }
+}
+
+.icon-primary {
+    color: @brand-primary;
+}
+
+.checkbox-inline, .radio-inline {
+    margin-top: 8px;
+}
+
+.checkbox input[type=checkbox],
+.checkbox-inline input[type=checkbox],
+.radio input[type=radio],
+.radio-inline input[type=radio] {
+    margin-top: 0;
+}
+
+.panel-group {
+    .panel {
+        box-shadow: none;
+        border: none;
+        border-bottom: solid 1px @gray-lighter;
+
+        .panel-heading {
+            background: none;
+            border: none;
+            padding: 10px 0;
+
+            .panel-title {
+                font-size: 20px;
+                margin: 0;
+                color: @brand-primary;
+                text-transform: uppercase;
+                white-space: nowrap;
+
+                a {
+                    position: relative;
+                    display: block;
+
+                    &:hover, &:focus, &:active {
+                        text-decoration: none;
+                        font-style: italic;
+                    }
+
+                    &:after {
+                        .np-icon();
+                        content: @np-caret;
+                        font-size: 20px;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        transform: rotate(90deg);
+                    }
+
+                    &[aria-expanded="true"] {
+                        &:after {
+                            transform: rotate(-90deg);
+                        }
+                    }
+                }
+            }
+        }
+
+        .panel-body {
+            border: none;
+            padding: 0 0 20px 0;
+
+            p {
+                margin: 0 0 5px;
+            }
+        }
+    }
+}
+
+a.backlink {
+    position: relative;
+    z-index: 5;
+
+    i.np-caret {
+        display: inline-block;
+        transform: rotate(180deg) translateY(2px);
+        vertical-align: middle;
+    }
+
+    &:before {
+        left: auto;
+        right: -1px;
+    }
+}
+
+.z10 {
+    position: relative;
+    z-index: 10;
+}
+
+.z1 {
+    position: relative;
+    z-index: 1;
+}
+
+.js-animate {
+    &.fadeInUp {
+        opacity: 0;
+        position: relative;
+        -webkit-transform: translateY(30px);
+        -o-transform: translateY(30px);
+        transform: translateY(30px);
+        -webkit-transition: opacity .4s cubic-bezier(.4,0,.2,1),-webkit-transform .4s cubic-bezier(.4,0,.2,1);
+        transition: opacity .4s cubic-bezier(.4,0,.2,1),-webkit-transform .4s cubic-bezier(.4,0,.2,1);
+        -o-transition: opacity .4s cubic-bezier(.4,0,.2,1),-o-transform .4s cubic-bezier(.4,0,.2,1);
+        transition: opacity .4s cubic-bezier(.4,0,.2,1),transform .4s cubic-bezier(.4,0,.2,1);
+        transition: opacity .4s cubic-bezier(.4,0,.2,1),transform .4s cubic-bezier(.4,0,.2,1),-webkit-transform .4s cubic-bezier(.4,0,.2,1),-o-transform .4s cubic-bezier(.4,0,.2,1);
+
+        &.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+//for data-paroller-type="foreground"
+@media (max-width: @screen-xs-max) {
+    .paroller {
+        transform: none !important;
+    }
+}
+//for background parallax effect
+@media (max-width: @screen-xs-max) {
+    .parollerbg {
+        background-position: center center !important;
+    }
+}
+
+@import "../Assets/Icons/variables";
+
+@import "partials/_app-banner";
+@import "partials/_blog";
+@import "partials/_buttons";
+@import "partials/_cards";
+@import "partials/_events";
+@import "partials/_footer";
+@import "partials/_grid";
+@import "partials/_group-finder";
+@import "partials/_header";
+@import "partials/_helpers";
+@import "partials/_modals";
+@import "partials/_navbar";
+@import "partials/_notification-bar";
+@import "partials/_page";
+@import "partials/_sermons";
+@import "partials/_social-icons";
+@import "partials/_staff";
+@import "partials/_typography";

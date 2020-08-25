@@ -1,0 +1,30 @@
+
+{% assign lastCampus = "" %}
+{% for member in Items %}
+
+    {% assign memberPerson = member | Attribute:'LinkedPerson','Object' %}
+    {% assign memberCampusName = memberPerson | Attribute:'EmploymentCampus','Name' %}
+    {% if memberCampusName == null or memberCampusName == empty %}{% assign memberCampusName = memberPerson | Campus | Property:'Name' %}{% endif %}
+
+    {% if lastCampus != memberCampusName %}
+        {% unless forloop.first %}
+            </div>
+        {% endunless %}
+        <h3 class="group-title">{{ memberCampusName | Escape }}</h3>
+        <div class="grid-responsive-4 margin-b-xl">
+        {% assign lastCampus = memberCampusName %}
+    {% endif %}
+
+	<div class='text-center'>
+	    <a class="staff-img img-read-more" href="{% assign ContentChannelItemId = member.Id %}{[ FormatLink url:'{{ LinkedPages.DetailPage }}' keys:'ContentChannelItemId' ]}" title="{{ member.Title | Escape }}">
+            <img src="{{ memberPerson | Attribute:'StaffPhoto','Url' }}" />
+        </a>
+	    <h5 class='margin-t-lg margin-b-sm'>{{ memberPerson.FullName | Escape }}</h5>
+	    <p>{{ memberPerson | Attribute:'StaffPosition' | Escape }}</p>
+	</div>
+            
+    {% if forloop.last %}
+        </div>
+    {% endif %}
+
+{% endfor %}
