@@ -44,7 +44,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: gray;
 
     // Bootstrap overrides
     float: none;
@@ -92,11 +91,15 @@
 .navbar-toggle-content {
     display: none;
     background-color: #282828;
-    padding: 1.75em 2.75em;
+    padding: 6.75em 2.75em;
     position: absolute;
     top: 0;
     right: 0;
     z-index: 0;
+
+    .nav-home-icon.nav-logo.np-logomark {
+        display: none;
+    }
 }
 
 .navbar-open {
@@ -146,6 +149,11 @@
     text-decoration: none;
     display: inline;
 
+}
+
+.nav-item.nav-dropdown {
+    display: block;
+    padding: 1em;
 }
 
 // Universal styles - Dropdown

@@ -8,7 +8,7 @@
         <!-- End Brand Icon -->
 
         <!-- Start Quick Links -->
-        <ul class="nav navbar-nav hidden-xs">
+        <ul class="nav navbar-nav hidden-sm hidden-xs">
             {% for includePage in IncludePageList %}
                 {% assign parts = includePage | PropertyToKeyValue %}
                 <li><a href="{{ parts.Value | Encode }}">{{ parts.Key | Encode }}</a></li>
