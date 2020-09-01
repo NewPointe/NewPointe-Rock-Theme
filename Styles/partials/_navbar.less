@@ -92,11 +92,15 @@
 .navbar-toggle-content {
     display: none;
     background-color: #282828;
-    padding: 1.75em 2.75em;
+    padding: 4.75em 1.75em;
     position: absolute;
     top: 0;
     right: 0;
     z-index: 0;
+
+    .nav-home-icon.nav-logo.np-logomark {
+        display: none;
+    }
 }
 
 .navbar-open {
@@ -126,7 +130,7 @@
 #navbar-toggle-content {
     height: 100vh;
     width: 400px;
-    margin: 10px 10px 0px 20px;
+   
 
 }
 
@@ -146,6 +150,12 @@
     text-decoration: none;
     display: inline;
 
+}
+
+.nav-item.nav-dropdown {
+    display: block;
+    padding: 1em;
+    margin: 0 1em 0 1em;
 }
 
 // Universal styles - Dropdown
