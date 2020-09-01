@@ -5,6 +5,8 @@
 
 trigger:
 - master
+- np-beta
+- np-production
 
 pool:
   vmImage: 'ubuntu-latest'
