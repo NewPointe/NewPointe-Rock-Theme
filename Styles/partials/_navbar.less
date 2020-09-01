@@ -39,16 +39,12 @@
     padding: 0rem 2rem;
 }
 
-.navbar.noheader {
-    margin-bottom: 1.5rem;
-    background-color: #fff;
-    box-shadow: @box-shadow;
-}
 
 .navbar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: gray;
 
     // Bootstrap overrides
     float: none;
@@ -106,7 +102,7 @@
 .navbar-open {
     .navbar-toggle-content {
         display: flex;
-
+        flex-wrap: wrap;
     }
 
 }
@@ -128,7 +124,7 @@
 
 
 #navbar-toggle-content {
-
+    height: 100vh;
     width: 370px;
     margin: 10px 10px 0px 20px;
 
