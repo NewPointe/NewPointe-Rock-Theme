@@ -11,6 +11,7 @@
             
             <div class="card-body">
                 <h3 class="margin-none">{{campus.Name}}</h3>
+                <br>
 	    		<!--<h5 class="subtitle">
                         {%- assign serviceDay = "" -%}
 			            {%- for serviceTime in campus.ServiceTimes -%}
