@@ -11,7 +11,7 @@
             
             <div class="card-body">
                 <h3 class="margin-none">{{campus.Name}}</h3>
-	    		<h5 class="subtitle">
+	    		<!--<h5 class="subtitle">
                         {%- assign serviceDay = "" -%}
 			            {%- for serviceTime in campus.ServiceTimes -%}
 			                {%- if serviceTime.Day != serviceDay -%}
@@ -23,7 +23,7 @@
 			                {% endif %}
 			                {{ serviceTime.Time }}
 			            {%- endfor -%}
-			    </h5>
+			    </h5>-->
                 {% assign LocationsPageDetails = campus | Attribute:'LocationsPageDetails' %}
 			    {% if LocationsPageDetails != '' and LocationsPageDetails != '<p><br></p>' %}
                     {{ LocationsPageDetails }}
