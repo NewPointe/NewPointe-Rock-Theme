@@ -50,7 +50,7 @@
                     font-size: 1em;
                     text-transform: uppercase;
                     font-weight: bold;
-                    color: black;
+                    color: #fff;
                     margin: 0 0 1rem 0;
                     padding: 0;
                 }
@@ -96,24 +96,55 @@
                 }
             }
 
-            .form-group.rock-control-wrapper {
-                width: 50%;
-                margin: 0 auto;
-            }
-            // Search Actions
-            .actions {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
+            #ctl00_feature_ctl09_ctl04_ctl08_filter_38306 {
+                display: inline-block;
                 padding: 0;
-                margin: 1.333rem;
-            }
-            // Results Views
-            & > div > div.margin-v-sm {
-                margin: 0 !important;
+                margin: 0.5em;
+                min-width: 5em;
+
+                & > input {
+                    opacity: 0;
+                    position: absolute;
+
+                    &:checked + .label-text {
+                        background-color: blue;
+                        color: white;
+                    }
+                }
+
+                & > .label-text {
+                    display: inline-block;
+                    margin: 0;
+                    padding: 1em 0.5em;
+                    border: 3px solid #61a744;
+                    border-radius: 10px;
+                    text-align: center;
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: blue;
+                    width: 100%;
+                }
             }
         }
+
+        .form-group.rock-control-wrapper {
+            width: 50%;
+            margin: 0 auto;
+        }
+        // Search Actions
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0;
+            margin: 1.333rem;
+        }
+        // Results Views
+        & > div > div.margin-v-sm {
+            margin: 0 !important;
+        }
     }
+}
 }
 
 .group-card {
