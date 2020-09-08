@@ -14,6 +14,7 @@
         padding: 0;
         // Panel Heading
         & > .panel-heading {
+            visibility: hidden;
             background-color: #282828;
             color: white;
             border: none;
@@ -192,16 +193,19 @@
 
 }
 
+.label {
+    font-size: 12px;
+}
 
 .group-card {
 
     h1 {
-        font-size: 2em;
+        font-size: 1.4em;
         color: #3e3e3e;
     }
 
     h4 {
-        font-size: 1.4em;
+        font-size: 1em;
         font-weight: normal;
         color: #8c8c8c;
     }
@@ -238,6 +242,12 @@
             }
         }
     }
+
+    // Map styling
+    #ctl00_main_ctl13_ctl01_ctl08_pnlMap {
+        width: 100%;
+    }
+
 }
 
 // Tablet view
@@ -253,6 +263,12 @@
             }
         }
     }
+
+    // Map styling
+    #ctl00_main_ctl13_ctl01_ctl08_pnlMap {
+        width: 100%;
+    }
+
 }
 
 // Small Desktop view
