@@ -64,6 +64,36 @@
                     column-width: unset;
                     column-gap: unset;
                 }
+                // Style Checkboxes as Toggle Buttons - Days of week
+                .rockcheckboxlist-horizontal .checkbox-inline {
+                    display: inline-block;
+                    padding: 0;
+                    margin: 0.5em;
+                    min-width: 5em;
+
+                    & > input {
+                        opacity: 0;
+                        position: absolute;
+
+                        &:checked + .label-text {
+                            background-color: #61a744;
+                            color: white;
+                        }
+                    }
+
+                    & > .label-text {
+                        display: inline-block;
+                        margin: 0;
+                        padding: 1em 0.5em;
+                        border: 3px solid #61a744;
+                        border-radius: 10px;
+                        text-align: center;
+                        font-size: 12px;
+                        font-weight: bold;
+                        color: #61a744;
+                        width: 100%;
+                    }
+                }
                 // Style Checkboxes as Toggle Buttons - Group Type
                 #ctl00_main_ctl13_ctl01_ctl08_filter_38306_col2 .checkbox-inline {
                     display: inline-block;
@@ -76,7 +106,7 @@
                         position: absolute;
 
                         &:checked + .label-text {
-                            background-color: #61a744;
+                            background-color: #5bc0de;
                             color: white;
                         }
                     }
@@ -124,7 +154,6 @@
                         width: 100%;
                     }
                 }
-                
             }
 
             .form-group.rock-control-wrapper {
