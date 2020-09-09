@@ -28,7 +28,7 @@
 
 
      
-
+{% if clickable %}
     <a href="" class="card group-card" data-toggle="modal" data-target="#groupModal">
         <div class="card group-card">
 
