@@ -49,7 +49,7 @@
 
 {% endcapture %}
 
-<div id="group-details" class="bg-light{% if MapGeoPoint != null %} grid-responsive-fullwidth{% endif %}">
+<div id="group-details #myModal" class="bg-light{% if MapGeoPoint != null %} grid-responsive-fullwidth{% endif %}">
     <div class="padding-lg {% if MapGeoPoint == null %} container{% endif %}">
         <div class="card">
             <div class="card-body padding-lg">
