@@ -49,9 +49,9 @@
 
 {% endcapture %}
 
-<div id="group-details" class="modal fade">
+<div id="group-details">
     <div class="padding-lg}">
-        <div class="card">
+        <div class="card modal fade" id="groupDetail">
             <div class="card-body padding-lg">
 
                 <h3 class="margin-b-none">{{ Group.Name }}</h3>
