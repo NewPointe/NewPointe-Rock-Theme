@@ -29,7 +29,7 @@
 
      
 {% if clickable %}
-    <a href="{{ GroupDetailsLink }}" class="card group-card" data-toggle="modal" data-target="#myModal">
+    <a href="{{ GroupDetailsLink }}" class="card group-card" data-toggle="modal" data-target=".group-card">
 
 {% else %}
     <div class="card group-card">
