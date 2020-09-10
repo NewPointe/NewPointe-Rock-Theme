@@ -1,9 +1,9 @@
 <div class="section bg-black">
   
         <div class="grid-responsive-2 card-stack col-lg-6 col-sm-12">
-            {% if Group in Groups %}
+            {% for Group in Groups forloop.index0 %}
             {% include '~~/Assets/Lava/GroupFinder_Card.lava' clickable:true %}
-            {% endif %}
+            {% endfor %}
         </div>
 
     <div class="text-center padding-md">
