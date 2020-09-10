@@ -28,7 +28,7 @@
 
 
 {% if clickable %}
-    <a href="" class="card group-card" data-toggle="modal" data-target="#groupModal">
+    <a href="{{ GroupDetailsLink }}" class="card group-card" data-toggle="modal" data-target="#groupModal">
     {% else %}
         <div class="card group-card">
 {% endif %}
@@ -74,6 +74,10 @@
                         <span class="label label-default">{{ Tag }}</span>
                     {% endfor %}
                 </p>
+
+                <p>{{ Group | Attribute:'GroupGoal' }}</p>
+
+                <h5>Leaders:</h5>
                 <ul class="list-unstyled">
                     {% for member in Group.Members %}
                         {% if member.GroupRole.IsLeader %}
@@ -83,7 +87,7 @@
                         {% endif %}
                     {% endfor %}
                 </ul>
-                <p>{{ Group | Attribute:'GroupGoal' }}</p>
+                
 
               </div>
               <div class="modal-footer">
