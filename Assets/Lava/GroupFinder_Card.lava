@@ -63,7 +63,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <p>{{ Group | Attribute:'GroupGoal' }}</p>
+                <p>{{ GroupDetailsLink }}</p>
                 <p style="line-height: 1.5;">
                     <span class="label label-primary">{{ Group.Campus.Name }}</span>
                     {% for Tag in GroupTypes %}
