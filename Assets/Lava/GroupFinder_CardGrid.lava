@@ -1,9 +1,9 @@
 <div class="section bg-black">
   
         <div class="grid-responsive-2 card-stack col-lg-6 col-sm-12">
-            {% if Group in Groups == true %}
+         
             {% include '~~/Assets/Lava/GroupFinder_Card.lava' clickable:true %}
-            {% endif %}
+       
         </div>
 
     <div class="text-center padding-md">
