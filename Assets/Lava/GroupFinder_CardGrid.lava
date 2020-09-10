@@ -2,9 +2,7 @@
   
         <div class="grid-responsive-2 card-stack col-lg-6 col-sm-12">
             {% for Group in Groups %}
-            {% include '~~/Assets/Lava/GroupFinder_Card.lava' clickable:true %}
-fasdkjfhalsdf
-
+            <a href="{% include '~~/Assets/Lava/GroupFinder_Card.lava' clickable:true %}"></a>
             {% endfor %}
         </div>
 
