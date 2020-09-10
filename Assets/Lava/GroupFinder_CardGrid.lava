@@ -1,3 +1,32 @@
+{% capture _ %}
+
+{% assign GroupId = Group.Id %}
+{% capture GroupDetailsLink %}{[ FormatLink url:'{{ LinkedPages.GroupDetailPage }}' keys:'GroupId' ]}{% endcapture %}
+
+{% assign LineFeed = "&#x0A;" | HtmlDecode %}
+
+{% assign MeetingTime = Group.Schedule.FriendlyScheduleText %}
+{% if MeetingTime contains LineFeed %}{% assign MeetingTime = null %}{% endif %}
+
+{% assign MeetingLocation = Group.GroupLocations | First | Property:'Location' %}
+
+{% capture GroupSubtitle %}
+
+{% if MeetingTime != null %}{{ MeetingTime }}{% endif %}
+
+{% if MeetingTime != null and MeetingLocation != null %} | {% endif %}
+
+{% if MeetingLocation != null %}{{ MeetingLocation.City }}, {{ MeetingLocation.State }}{% endif %}
+
+{% endcapture %}
+
+
+{% assign GroupTypes = Group | Attribute:'Hub' | Split:',' %}
+{% assign GroupCharacteristics = Group | Attribute:'GroupCharacteristics' | Split:',' %}
+
+{% endcapture %}
+
+
 <div class="section bg-black">
   
         <div class="grid-responsive-2 card-stack col-lg-6 col-sm-12">
@@ -55,8 +84,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <a class="btn btn-primary pull-right" href="{{ Group.Id }}/register">
-                    Request Info<i class="np-icon np-caret"></i>
+                <a class="btn btn-primary pull-right" href="{{ Group.Id }}/register">Request Info<i class="np-icon np-caret"></i>
                 </a>
             </div>
         </div>
