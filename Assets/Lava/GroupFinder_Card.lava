@@ -1,7 +1,7 @@
 {% capture _ %}
 
     {% assign GroupId = Group.Id %}
-    {% capture GroupDetailsLink %}{[ FormatLink url:'{{ LinkedPages.GroupDetailPage }}' keys:'GroupId' ]}{% endcapture %}
+    
 
     {% assign LineFeed = "&#x0A;" | HtmlDecode %}
 
@@ -28,7 +28,7 @@
 
 
 {% if clickable %}
-    <a href="{{ GroupDetailsLink }}" class="card group-card" data-toggle="modal" data-target="#groupModal">
+    <a href="" class="card group-card" data-toggle="modal" data-target="#groupModal">
     {% else %}
         <div class="card group-card">
 {% endif %}
