@@ -55,45 +55,4 @@
     </div>
 {% endif %}
   
-    <!-- Modal -->
-        <div class="modal fade" id="groupModal" tabindex="-1" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title">{{ Group.Name}}</h1>
-                <h4 class="text-muted modal-title">{{ GroupSubtitle }}</h4>
-              </div>
-              <div class="modal-body">
-                
-                <p style="line-height: 1.5;">
-                    <span class="label label-primary">{{ Group.Campus.Name }}</span>
-                    {% for Tag in GroupTypes %}
-                        <span class="label label-info">{{ Tag }}</span>
-                    {% endfor %}
-                    {% for Tag in GroupCharacteristics %}
-                        <span class="label label-default">{{ Tag }}</span>
-                    {% endfor %}
-                </p>
-
-                <p>{{ Group | Attribute:'GroupGoal' }}</p>
-
-                <h5>Leaders:</h5>
-                <ul class="list-unstyled">
-                    {% for member in Group.Members %}
-                        {% if member.GroupRole.IsLeader %}
-                        <li>
-                            {{ member.Person.FullName }} {% if member.GroupRole.Name != "Leader" %}<small>({{ member.GroupRole.Name }})</small>{% endif %}
-                        </li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-                
-
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <a class="btn btn-primary pull-right" href="{{ Group.Id }}/register">Request Info<i class="np-icon np-caret"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
+    
