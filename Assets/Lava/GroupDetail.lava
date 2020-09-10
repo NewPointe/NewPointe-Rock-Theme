@@ -3,7 +3,7 @@
 {% capture _ %}
 
     {% assign GroupId = Group.Id %}
-    
+    {% capture GroupDetailsLink %}{[ FormatLink url:'{{ LinkedPages.GroupDetailPage }}' keys:'GroupId' ]}{% endcapture %}
 
     {% assign LineFeed = "&#x0A;" | HtmlDecode %}
 
