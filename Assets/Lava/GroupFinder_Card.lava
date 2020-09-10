@@ -27,11 +27,11 @@
 {% endcapture %}
 
 
-     
-
+{% if clickable %}
     <a href="" class="card group-card" data-toggle="modal" data-target="#groupModal">
+    {% else %}
         <div class="card group-card">
-
+{% endif %}
             <div class="card-body">
 
                 <h1>{{ Group.Name }}</h1>
@@ -48,8 +48,12 @@
                     {% endfor %}
                 </p>
             </div>
-        </div>
+
+{% if clickable %}
     </a>
+{% else %}
+    </div>
+{% endif %}
   
     <!-- Modal -->
         <div class="modal fade" id="groupModal" tabindex="-1" aria-hidden="true">
