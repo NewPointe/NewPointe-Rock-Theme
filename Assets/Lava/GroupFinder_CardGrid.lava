@@ -1,8 +1,8 @@
 <div class="section bg-black">
   
         <div class="grid-responsive-2 card-stack col-lg-6 col-sm-12">
-            {% for Group in Groups %}
-                {% include '~~/Assets/Lava/GroupFinder_Card.lava' clickable:true %}
+            {% for Group in Groups limit:1 %}
+            {% include '~~/Assets/Lava/GroupFinder_Card.lava' clickable:true %}
             {% endfor %}
         </div>
 
