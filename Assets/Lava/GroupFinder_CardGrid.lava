@@ -32,7 +32,7 @@
                 {% assign GroupTypes = Group | Attribute:'Hub' | Split:',' %}
                 {% assign GroupCharacteristics = Group | Attribute:'GroupCharacteristics' | Split:',' %}
 
-{% endcapture %}
+
 
 
 {% if clickable %}
