@@ -81,7 +81,7 @@
                     {% endfor %}
                 </p>
 
-                <p>{{ Group | Attribute:'GroupGoal' }}</p>
+                <p>{{ Group | Attribute:'Description' }}</p>
 
                 <h5>Leaders:</h5>
                 <ul class="list-unstyled">
