@@ -77,11 +77,14 @@
                     <span class="label label-info">{{ Tag }}</span>
                     {% endfor %}
                     {% for Tag in GroupCharacteristics %}
+                    <span class="label label-info">{{ Tag }}</span>
+                    {% endfor %}
+                    {% for Tag in GroupCategory %}
                     <span class="label label-default">{{ Tag }}</span>
                     {% endfor %}
                 </p>
 
-                <p>{{ Group | Attribute:'GroupGoal' }}</p>
+                <p>{{ Group | Attribute:'Description' }}</p>
 
                 <h5>Leaders:</h5>
                 <ul class="list-unstyled">
