@@ -94,7 +94,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <a class="btn btn-primary pull-right" href="~/smallgroup/{{ Group.Id }}/register">
+                <a class="btn btn-primary pull-right" href="https://newpointe.org/smallgroup/{{ Group.Id }}/register">
                     Request Info<i class="np-icon np-caret"></i>
                 </a>
             </div>
