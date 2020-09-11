@@ -27,11 +27,9 @@
 {% endcapture %}
 
 
-{% if clickable %}
-    <a href="" class="card group-card" data-toggle="modal" data-target="#groupModal">
-    {% else %}
+
         <div class="card group-card">
-{% endif %}
+
             <div class="card-body">
 
                 <h1>{{ Group.Name }}</h1>
@@ -47,13 +45,15 @@
                         <span class="label label-default">{{ Tag }}</span>
                     {% endfor %}
                 </p>
+
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#groupModal">
+				  More Info
+				</button>
+
             </div>
 
-{% if clickable %}
-    </a>
-{% else %}
-    </div>
-{% endif %}
+    	</div>
+
   
     
     
