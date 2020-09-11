@@ -28,7 +28,7 @@
 
 
 {% if clickable %}
-    <a href="" class="card group-card" data-toggle="modal" data-target="#groupModal">
+    <a href="https://newpointe.org/smallgroup/{{ GroupId }}" class="card group-card" data-toggle="modal" data-target="#groupModal">
     {% else %}
         <div class="card group-card">
 {% endif %}
