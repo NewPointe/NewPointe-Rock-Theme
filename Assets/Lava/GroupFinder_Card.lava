@@ -28,7 +28,7 @@
 
 
 {% if clickable %}
-    <a class="card group-card" data-toggle="modal" data-target="#groupModal">
+    <a class="card group-card" data-toggle="modal" data-target="#{{ GroupId }}modal">
     {% else %}
         <div class="card group-card">
 {% endif %}
@@ -61,8 +61,7 @@
 
 
 <!-- Modal -->
-<!-- Comment cause we're trying some crap
-<div class="modal fade" id="groupModal" tabindex="0" aria-hidden="true">
+<div class="modal fade" id="{{ GroupId }}modal" tabindex="0" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -105,7 +104,7 @@
             </div>
         </div>
     </div>
-</div>-->
+</div>
 
 
 
