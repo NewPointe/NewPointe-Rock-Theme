@@ -96,8 +96,7 @@
                     }
                 }
                 // Style Checkboxes as Toggle Buttons - Group Type
-                #ctl00_feature_ctl09_ctl04_ctl08_filter_38306 #ctl00_feature_ctl09_ctl04_ctl08_filter_45848,
-                .checkbox-inline {
+                #ctl00_feature_ctl09_ctl04_ctl08_filter_38306 .checkbox-inline {
                     display: inline-block;
                     padding: 0;
                     margin: 0.5em;
@@ -126,7 +125,40 @@
                         width: 100%;
                     }
                 }
+
+
                 // Style Checkboxes as Toggle Buttons - Group Char
+                #ctl00_feature_ctl09_ctl04_ctl08_filter_45848 .checkbox-inline {
+                    display: inline-block;
+                    padding: 0;
+                    margin: 0.5em;
+                    min-width: 5em;
+
+                    & > input {
+                        opacity: 0;
+                        position: absolute;
+
+                        &:checked + .label-text {
+                            background-color: #5bc0de;
+                            color: white;
+                        }
+                    }
+
+                    & > .label-text {
+                        display: inline-block;
+                        margin: 0;
+                        padding: 1em 0.5em;
+                        border: 3px solid #5bc0de;
+                        border-radius: 10px;
+                        text-align: center;
+                        font-size: 12px;
+                        font-weight: bold;
+                        color: #5bc0de;
+                        width: 100%;
+                    }
+                }
+
+                // Style Checkboxes as Toggle Buttons - Group Cat
                 #ctl00_feature_ctl09_ctl04_ctl08_filter_55469 .checkbox-inline {
                     display: inline-block;
                     padding: 0;
@@ -169,11 +201,6 @@
                 float: right;
             }
 
-            .noGroup {
-                 margin: 0 auto;
-                padding: 10px;
-                float: left;
-            }
 
             // Search Actions
             .actions {
