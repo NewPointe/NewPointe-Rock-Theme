@@ -73,7 +73,7 @@
             <div class="modal-header">
 
                 <h1 class="modal-title">{{ Group.Name}}</h1>
-                <h4 class="text-muted modal-subtitle">{{ GroupSubtitle }}</h4>
+                <h4 class="text-muted modal-title">{{ GroupSubtitle }}</h4>
             </div>
             <div class="modal-body">
 
