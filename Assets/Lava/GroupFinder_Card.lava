@@ -24,6 +24,8 @@
     {% assign GroupTypes = Group | Attribute:'Hub' | Split:',' %}
     {% assign GroupCharacteristics = Group | Attribute:'GroupCharacteristics' | Split:',' %}
     {% assign GroupCategory = Group | Attribute:'GroupCategory' | Split:',' %}
+	
+
 
 {% endcapture %}
 
@@ -88,7 +90,7 @@
                     {% endfor %}
                 </p>
 
-                <p>{{ Group | Attribute:'Description' }}</p>
+                <p>{{ Group.Description }}</p>
 
                 <h5>Leaders:</h5>
                 <ul class="list-unstyled">
