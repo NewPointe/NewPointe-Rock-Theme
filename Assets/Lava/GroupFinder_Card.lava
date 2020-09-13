@@ -16,7 +16,9 @@
 
         {% if MeetingTime != null and MeetingLocation != null %} | {% endif %}
 
-        {% if MeetingLocation != null %}{{ MeetingLocation.City }}, {{ MeetingLocation.State }}{% endif %}
+        {% if MeetingLocation != null %}{{ MeetingLocation.City }} {{ MeetingLocation.State }}{% endif %}
+
+        {% if MeetingLocation == null %}{{ Group.Online }}{% endif %}
 
     {% endcapture %}
 
