@@ -10,6 +10,9 @@
 
     {% assign MeetingLocation = Group.GroupLocations | First | Property:'Location' %}
 
+    {% assign GroupOnline = Group.Online %}
+
+
     {% capture GroupSubtitle %}
 
         {% if MeetingTime != null %}{{ MeetingTime }}{% endif %}
@@ -18,7 +21,7 @@
 
         {% if MeetingLocation != null %}{{ MeetingLocation.City }} {{ MeetingLocation.State }}{% endif %}
 
-        {% if MeetingLocation == null %}{{ Online }}{% endif %}
+        {% if MeetingLocation == null %}{{ GroupOnline }}{% endif %}
 
     {% endcapture %}
 
