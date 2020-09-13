@@ -24,7 +24,6 @@
     {% assign GroupTypes = Group | Attribute:'Hub' | Split:',' %}
     {% assign GroupCharacteristics = Group | Attribute:'GroupCharacteristics' | Split:',' %}
     {% assign GroupCategory = Group | Attribute:'GroupCategory' | Split:',' %}
-	
 
 
 {% endcapture %}
