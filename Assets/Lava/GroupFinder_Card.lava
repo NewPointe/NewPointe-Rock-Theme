@@ -22,8 +22,7 @@
         {% if MeetingLocation != null %}{{ MeetingLocation.City }} {{ MeetingLocation.State }}{% endif %}
 
         {% if MeetingLocation != null and GroupOnline == true %}{{ MeetingLocation.City }} {{ MeetingLocation.State }} | Online{% endif %}
-     	{% if GroupOnline == true %} Online{% endif %}
-
+		{% if GroupOnline == true and MeetingLocation == null %} Online{% endif %}
     {% endcapture %}
 
 
@@ -85,7 +84,9 @@
             <div class="modal-body">
 
                 <p style="line-height: 1.5;">
-                    <span class="label label-primary">{{ Group.Campus.Name }}</span>
+                    {% if GroupKids == true %}
+                    <span class="label label-primary">Kid Friendly</span>
+                    {% endif %}
                     {% for Tag in GroupTypes %}
                     <span class="label label-info">{{ Tag }}</span>
                     {% endfor %}
