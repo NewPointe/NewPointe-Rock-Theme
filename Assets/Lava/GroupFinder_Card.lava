@@ -21,7 +21,8 @@
 
         {% if MeetingLocation != null %}{{ MeetingLocation.City }} {{ MeetingLocation.State }}{% endif %}
 
-        {% if GroupOnline == true %}| ONLINE{% endif %}
+        {% if GroupOnline == true and MeetingLocation != null %}| Online{% endif %}
+		{% if GroupOnline == true and MeetingLocation == null %} Online{% endif %}
 
     {% endcapture %}
 
@@ -46,7 +47,7 @@
                 <!--p>{{ Group | Attribute:'GroupGoal' }}</p-->
 
                 <p style="line-height: 1.5;">
-                    <span class="label label-primary">{{ GroupKids }}</span>
+                    <span class="label label-primary">Kid Friendly</span>
                     {% for Tag in GroupTypes %}
                     <span class="label label-info">{{ Tag }}</span>
                     {% endfor %}
