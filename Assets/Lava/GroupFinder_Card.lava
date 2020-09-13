@@ -15,10 +15,15 @@
 
     {% capture GroupSubtitle %}
 
-        {% if MeetingTime != null %}{{ MeetingTime }}
-        {% elseif MeetingLocation != '' and GroupOnline == false %}| {{ MeetingLocation.City }} {{ MeetingLocation.State }}
-        {% elseif MeetingLocation != '' and GroupOnline == true %}| {{ MeetingLocation.City }} {{ MeetingLocation.State }} | Online
-        {% elseif GroupOnline == true and MeetingLocation == '' %}| Online
+        {% if MeetingTime != null %}
+		{{ MeetingTime }}
+		{% endif %}
+        {% if MeetingLocation != '' and GroupOnline == false %}
+            | {{ MeetingLocation.City }} {{ MeetingLocation.State }}
+        {% elseif MeetingLocation != '' and GroupOnline == true %}
+            | {{ MeetingLocation.City }} {{ MeetingLocation.State }} | Online
+        {% elseif GroupOnline == true and MeetingLocation == '' %}
+            | Online
         {% endif %}
 
 
