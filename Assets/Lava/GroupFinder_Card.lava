@@ -10,8 +10,8 @@
 
     {% assign MeetingLocation = Group.GroupLocations | First | Property:'Location' %}
 
-    {% assign GroupOnline = Group.Online %}
-
+    {% assign GroupOnline = Group | Attribute:'Online' | AsBoolean %}
+	{% assign GroupKids = Group | Attribute:'KidFriendly' | AsBoolean %}
 
     {% capture GroupSubtitle %}
 
@@ -21,7 +21,7 @@
 
         {% if MeetingLocation != null %}{{ MeetingLocation.City }} {{ MeetingLocation.State }}{% endif %}
 
-        {% if GroupOnline == true | Asboolean %}{{ GroupOnline }}{% endif %}
+        {% if GroupOnline == true %}{{ GroupOnline }}{% endif %}
 
     {% endcapture %}
 
@@ -46,7 +46,7 @@
                 <!--p>{{ Group | Attribute:'GroupGoal' }}</p-->
 
                 <p style="line-height: 1.5;">
-                    <span class="label label-primary">{{ Group.Kid.Friendly }}</span>
+                    <span class="label label-primary">{{ GroupKids }}</span>
                     {% for Tag in GroupTypes %}
                     <span class="label label-info">{{ Tag }}</span>
                     {% endfor %}
