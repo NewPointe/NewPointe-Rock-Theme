@@ -21,7 +21,7 @@
 
         {% if MeetingLocation != null %}{{ MeetingLocation.City }} {{ MeetingLocation.State }}{% endif %}
 
-        {% if MeetingLocation != null and GroupOnline == true %}{{ MeetingLocation.City }} {{ MeetingLocation.State }} | Online{% endif %}
+        {% if MeetingLocation != '' and GroupOnline == true %}{{ MeetingLocation.City }} {{ MeetingLocation.State }} | Online{% endif %}
 		{% if GroupOnline == true and MeetingLocation == '' %} Online{% endif %}
 		
     {% endcapture %}
