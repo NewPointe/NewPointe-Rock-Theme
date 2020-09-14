@@ -15,7 +15,7 @@
 
     {% capture GroupSubtitle %}
 
-        {% if MeetingTime == '' %}
+        {% if MeetingTime != null %}
 		{{ MeetingTime }}
 		{% endif %}
         {% if MeetingLocation != '' and GroupOnline == false %}
