@@ -128,7 +128,7 @@
 </div>
 
 
-<!-- Dropdown to button function -->
+<!-- Dropdown to button function 
 <script type="text/javascript">
 	
 var selectName = $('select').attr('name');
@@ -152,3 +152,4 @@ $(document).on('click', '#ctl00_main_ctl06_ctl01_ctl00_filter_55466_ctlCompareVa
 
 </script>
 
+-->
