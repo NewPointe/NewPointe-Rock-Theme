@@ -51,8 +51,8 @@
                     text-transform: uppercase;
                     font-weight: bold;
                     color: #fff;
-                    margin: 0 0 1rem 0;
-                    padding: 0;
+                    margin: 10px;
+                    padding: 5px;
                 }
 
                 .rockcheckboxlist-horizontal,
@@ -248,7 +248,8 @@
 }
 
 // Map styling
-#ctl00_main_ctl13_ctl01_ctl08_pnlMap {
+#ctl00_main_ctl13_ctl01_ctl08_pnlMap,
+#ctl00_main_ctl06_ctl01_ctl00_pnlMap {
     position: sticky;
     top: -10px;
     float: right;
@@ -256,6 +257,10 @@
     padding-top: 130px;
     padding-right: 10px;
 
+}
+
+#map_canvas {
+    border-radius: 10px;
 }
 
 .label {
@@ -285,7 +290,10 @@
     visibility: hidden;
 }
 
-
+.fa.fa-info-circle {
+    display: none;
+    visibility: hidden;
+}
 
 
 // Phone view
@@ -313,7 +321,8 @@
     }
 
     // Map styling
-    #ctl00_main_ctl13_ctl01_ctl08_pnlMap {
+    #ctl00_main_ctl13_ctl01_ctl08_pnlMap,
+    #ctl00_main_ctl06_ctl01_ctl00_pnlMap {
         display: none;
         visibility: hidden;
     }
@@ -335,7 +344,8 @@
     }
 
     // Map styling
-    #ctl00_main_ctl13_ctl01_ctl08_pnlMap {
+    #ctl00_main_ctl13_ctl01_ctl08_pnlMap,
+    #ctl00_main_ctl06_ctl01_ctl00_pnlMap {
         display: none;
         visibility: hidden;
     }
