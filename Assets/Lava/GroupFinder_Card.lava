@@ -5,8 +5,7 @@
 
     {% assign LineFeed = "&#x0A;" | HtmlDecode %}
 
-
-    {% assign MeetingTime = Group | Attribute:'GroupSchedule', 'DayoftheWeek', 'TimeofDay' %}
+    {% assign MeetingTime = Group.Schedule.FriendlyScheduleText %}
     {% if MeetingTime contains LineFeed %}{% assign MeetingTime = null %}{% endif %}
 
     {% assign MeetingLocation = Group.GroupLocations | First | Property:'Location' %}
