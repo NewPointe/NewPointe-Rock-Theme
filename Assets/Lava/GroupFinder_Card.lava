@@ -34,7 +34,7 @@
 		{{ GroupSchedule }}: {{ DayoftheWeek }}s at {{ TimeofDay }}
 		{% endif %}
 
-        {% if MeetingLocation != '' and GroupOnline == false %}
+        {% if MeetingLocation != '' and GroupOnline == null %}
             | {{ MeetingLocation.City }} {{ MeetingLocation.State }}
         {% elseif MeetingLocation != '' and GroupOnline == true %}
             | {{ MeetingLocation.City }} {{ MeetingLocation.State }} | Online
