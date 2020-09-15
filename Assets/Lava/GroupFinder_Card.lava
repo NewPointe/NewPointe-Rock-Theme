@@ -10,13 +10,22 @@
 
     {% assign MeetingLocation = Group.GroupLocations | First | Property:'Location' %}
 
+    {% assign GroupOnline = Group | Attribute:'Online' | AsBoolean %}
+	{% assign GroupKids = Group | Attribute:'KidFriendly' | AsBoolean %}
+
     {% capture GroupSubtitle %}
 
-        {% if MeetingTime != null %}{{ MeetingTime }}{% endif %}
+        {% if MeetingTime != null %}
+		{{ MeetingTime }}
+		{% endif %}
+        {% if MeetingLocation != '' and GroupOnline == false %}
+            | {{ MeetingLocation.City }} {{ MeetingLocation.State }}
+        {% elseif MeetingLocation != '' and GroupOnline == true %}
+            | {{ MeetingLocation.City }} {{ MeetingLocation.State }} | Online
+        {% elseif GroupOnline == true and MeetingLocation == '' %}
+            | Online
+        {% endif %}
 
-        {% if MeetingTime != null and MeetingLocation != null %} | {% endif %}
-
-        {% if MeetingLocation != null %}{{ MeetingLocation.City }}, {{ MeetingLocation.State }}{% endif %}
 
     {% endcapture %}
 
@@ -24,7 +33,6 @@
     {% assign GroupTypes = Group | Attribute:'Hub' | Split:',' %}
     {% assign GroupCharacteristics = Group | Attribute:'GroupCharacteristics' | Split:',' %}
     {% assign GroupCategory = Group | Attribute:'GroupCategory' | Split:',' %}
-	
 
 
 {% endcapture %}
@@ -42,7 +50,9 @@
                 <!--p>{{ Group | Attribute:'GroupGoal' }}</p-->
 
                 <p style="line-height: 1.5;">
-                    <span class="label label-primary">{{ Group.Campus.Name }}</span>
+                	{% if GroupKids == true %}
+                    <span class="label label-primary">Kid Friendly</span>
+                    {% endif %}
                     {% for Tag in GroupTypes %}
                     <span class="label label-info">{{ Tag }}</span>
                     {% endfor %}
@@ -78,7 +88,9 @@
             <div class="modal-body">
 
                 <p style="line-height: 1.5;">
-                    <span class="label label-primary">{{ Group.Campus.Name }}</span>
+                    {% if GroupKids == true %}
+                    <span class="label label-primary">Kid Friendly</span>
+                    {% endif %}
                     {% for Tag in GroupTypes %}
                     <span class="label label-info">{{ Tag }}</span>
                     {% endfor %}
@@ -116,4 +128,28 @@
 </div>
 
 
+<!-- Dropdown to button function 
+<script type="text/javascript">
+	
+var selectName = $('select').attr('name');
 
+// add a hidden element with the same name as the select
+var hidden = $('<input type="hidden" name="'+selectName+'">');
+hidden.val($('select').val());
+hidden.insertAfter($('select'));
+
+$("select option").unwrap().each(function() {
+    var btn = $('<div id="ctl00_main_ctl06_ctl01_ctl00_filter_55466_ctlCompareValue">'+$(this).text()+'</div>');
+    if($(this).is(':checked')) btn.addClass('on');
+    $(this).replaceWith(btn);
+});
+
+$(document).on('click', '#ctl00_main_ctl06_ctl01_ctl00_filter_55466_ctlCompareValue', function() {
+    $('#ctl00_main_ctl06_ctl01_ctl00_filter_55466_ctlCompareValue').removeClass('on');
+    $(this).addClass('on');
+    $('input[name="'+selectName+'"]').val($(this).text());
+});
+
+</script>
+
+-->
