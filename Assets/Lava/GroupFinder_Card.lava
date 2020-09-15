@@ -5,8 +5,16 @@
 
     {% assign LineFeed = "&#x0A;" | HtmlDecode %}
 
+
+{% comment %}
     {% assign MeetingTime = Group.Schedule.FriendlyScheduleText %}
     {% if MeetingTime contains LineFeed %}{% assign MeetingTime = null %}{% endif %}
+{% endcomment %}
+
+	{% assign DayoftheWeek = Group | Attribute: 'DayoftheWeek' %}
+	{% assign TimeofDay = Group | Attribute: 'TimeofDay' %}
+	{% assign GroupSchedule = Group | Attribute: 'GroupSchedule' %}
+
 
     {% assign MeetingLocation = Group.GroupLocations | First | Property:'Location' %}
 
@@ -15,10 +23,17 @@
 
     {% capture GroupSubtitle %}
 
+{% comment %}
         {% if MeetingTime != null %}
 		{{ MeetingTime }}
 		{% endif %}
-		
+{% endcomment %}
+
+
+		{% if GroupSchedule  != '' and DayoftheWeek  != '' and TimeofDay  != '' %}
+		{{ GroupSchedule }}: {{ DayoftheWeek }}s at {{ TimeofDay }}
+		{% endif %}
+
         {% if MeetingLocation != '' and GroupOnline == false %}
             | {{ MeetingLocation.City }} {{ MeetingLocation.State }}
         {% elseif MeetingLocation != '' and GroupOnline == true %}
