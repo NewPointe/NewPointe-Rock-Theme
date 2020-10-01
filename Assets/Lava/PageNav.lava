@@ -42,7 +42,7 @@
 
                     <li class="nav-item nav-dropdown">
 
-                        <a class="nav-link nav-dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ navItem.Title | Encode }} <span class="nav-caret" aria-hidden="true"></span></a>
+                        <p>{{ navItem.Title | Encode }} <span class="nav-caret" aria-hidden="true"></span></p>
 
                         <div class="nav-dropdown-content">
 
