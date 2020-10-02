@@ -15,6 +15,7 @@
 .noheader #zone-navigation {
     position: relative;
     position: sticky;
+    color: gray;
 }
 
 .block-highlight #zone-navigation,
@@ -44,13 +45,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: gray;
+
 
     // Bootstrap overrides
     float: none;
     &::before, &::after {
         content: unset;
     }
+}
+
+.noheader .navbar {
+    color: gray;
+    background-color: @truewhite;
 }
 
 .navbar-nav > li > a {
@@ -131,6 +137,7 @@
     height: 100vh;
     width: min-content;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .nav-pagelist-item {
@@ -244,7 +251,7 @@
     .nav-pagelist-link {
         color: @brand-primary;
         font-weight: 600;
-        font-size: 1.5em;
+        font-size: 1em;
         padding: 0.5em;
 
         &:hover, &:active, &:focus {
@@ -319,7 +326,7 @@
 
     .nav-section-header {
         font-weight: 600;
-        font-size: 1.5em;
+        font-size: 1em;
         color: #b3b3b3;
         font-family: "Open San",sans-serif;
     }
