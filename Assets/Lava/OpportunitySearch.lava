@@ -7,9 +7,10 @@
 {% endif %}
 
 {% for opportunity in Opportunities %}
+<div class="grid-responsive-2">
     <div class="card">
-      <h2 class="panel-title pull-left"><i class='{{ opportunity.IconCssClass }}'></i> {{ opportunity.PublicName }}</h2>
-        <img alt="Image for {{ opportunity.PublicName }}" src="{{ opportunity.PhotoUrl }}" class="title-image img-responsive margin-b-md">
+      <h2><i class='{{ opportunity.IconCssClass }}'></i> {{ opportunity.PublicName }}</h2>
+        <img alt="Image for {{ opportunity.PublicName }}" src="{{ opportunity.PhotoUrl }}" class="img-responsive margin-b-md">
       <div class="card-body">
         <p>{{ opportunity.Summary }}</p>
 		{% if DetailPage contains "?" %}
@@ -19,7 +20,9 @@
 		{% endif %}
       </div>
     </div>
+</div>
 {% endfor %}
+
 
 <script type="text/javascript">
   $( document ).ready(function() {
