@@ -9,15 +9,14 @@
 {% for opportunity in Opportunities %}
 <div class="grid-responsive-2">
     <div class="card">
-      <h2><i class='{{ opportunity.IconCssClass }}'></i> {{ opportunity.PublicName }}</h2>
+      <h2 class="text-center"><i class='{{ opportunity.IconCssClass }}'></i> {{ opportunity.PublicName }}</h2>
         <img alt="Image for {{ opportunity.PublicName }}" src="{{ opportunity.PhotoUrl }}" class="img-responsive margin-b-md">
       <div class="card-body">
         <p>{{ opportunity.Summary }}</p>
-		{% if DetailPage contains "?" %}
-			<a class="btn btn-primary btn-sm" href="{{ DetailPage }}&OpportunityId={{ opportunity.Id }}" role="button">More Info</a>
-		{% else %}
-			<a class="btn btn-primary btn-sm" href="{{ DetailPage }}?OpportunityId={{ opportunity.Id }}" role="button">More Info</a>
-		{% endif %}
+
+        <a class="text-center btn btn-primary" href="#" onclick="toggle_visibility('foo');">Learn More</a>
+        <p class="padding-lg" id="foo" style="display: none;">{{ opportunity.Details }}</p>
+		
       </div>
     </div>
 </div>
@@ -28,4 +27,12 @@
   $( document ).ready(function() {
     $('.js-group-item').tooltip();
   });
+
+  function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
 </script>
