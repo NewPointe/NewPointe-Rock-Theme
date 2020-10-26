@@ -7,7 +7,7 @@
 {% endif %}
 
 {% for opportunity in Opportunities %}
-<div class="grid-responsive-2">
+
     <div class="card">
       <h2 class="text-center"><i class='{{ opportunity.IconCssClass }}'></i> {{ opportunity.PublicName }}</h2>
         <img alt="Image for {{ opportunity.PublicName }}" src="{{ opportunity.PhotoUrl }}" class="img-responsive margin-b-md">
@@ -15,11 +15,11 @@
         <p>{{ opportunity.Summary }}</p>
 
         <a class="text-center btn btn-primary" href="#" onclick="toggle_visibility('foo');">Learn More</a>
-        <p class="padding-lg" id="foo" style="display: none;">{{ opportunity.Details }}</p>
+        <p class="padding-lg" id="foo">{{ opportunity.Details }}</p>
 		
       </div>
     </div>
-</div>
+
 {% endfor %}
 
 
