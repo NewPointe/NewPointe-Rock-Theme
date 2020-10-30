@@ -12,11 +12,11 @@
       <h2 class="text-center"><i class='{{ opportunity.IconCssClass }}'></i> {{ opportunity.PublicName }}</h2>
         <img alt="Image for {{ opportunity.PublicName }}" src="{{ opportunity.PhotoUrl }}" class="img-responsive margin-b-md">
       <div class="card-body">
-        <p>{{ opportunity.Summary }}</p>
+        <!--p>{{ opportunity.Summary }}</p-->
 
         <a class="text-center btn btn-primary" data-toggle="collapse" href="#voldetails" role="button" aria-expanded="false" aria-controls="voldetails">Learn More</a>
         <div class="collapse" id="voldetails">
-        <p class="padding-lg">{{ opportunity.Details }}</p>
+        <p class="padding-lg">{{ opportunity.Summary }}</p>
 		    </div>
       </div>
     </div>
