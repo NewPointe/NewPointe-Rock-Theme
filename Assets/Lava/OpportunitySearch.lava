@@ -14,8 +14,8 @@
       <div class="card-body">
         <p>{{ opportunity.Summary }}</p>
 
-        <a class="text-center btn btn-primary" href="#" onclick="toggleVisibility();">Learn More</a>
-        <div id="details">
+        <a class="text-center btn btn-primary" data-toggle="collapse" href="#voldetails" role="button" aria-expanded="false" aria-controls="collapseExample">Learn More</a>
+        <div id="voldetails">
         <p class="padding-lg">{{ opportunity.Details }}</p>
 		    </div>
       </div>
@@ -28,12 +28,5 @@
   $( document ).ready(function() {
     $('.js-group-item').tooltip();
   });
-
-  function toggleVisibility() {
-       var e = document.getElementById('details');
-       if(e.style.display === 'none')
-          e.style.display = 'block';
-       else
-          e.style.display = 'none';
-    }
 </script>
+
