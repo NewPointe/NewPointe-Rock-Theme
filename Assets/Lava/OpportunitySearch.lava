@@ -14,9 +14,10 @@
       <div class="card-body">
         <p>{{ opportunity.Summary }}</p>
 
-        <a class="text-center btn btn-primary" href="#" onclick="toggle_visibility('foo');">Learn More</a>
-        <p class="padding-lg" id="foo">{{ opportunity.Details }}</p>
-		
+        <a class="text-center btn btn-primary" href="#" onclick="toggleVisibility();">Learn More</a>
+        <div id="details">
+        <p class="padding-lg">{{ opportunity.Details }}</p>
+		    </div>
       </div>
     </div>
 
@@ -28,11 +29,11 @@
     $('.js-group-item').tooltip();
   });
 
-  function toggle_visibility(id) {
-       var e = document.getElementById(id);
-       if(e.style.display == 'block')
-          e.style.display = 'none';
-       else
+  function toggleVisibility() {
+       var e = document.getElementById('details');
+       if(e.style.display === 'none')
           e.style.display = 'block';
+       else
+          e.style.display = 'none';
     }
 </script>
