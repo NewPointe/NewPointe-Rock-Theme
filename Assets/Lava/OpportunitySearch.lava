@@ -1,4 +1,5 @@
 {% assign opportunityCount = Opportunities | Size %}
+{% assign OpportunityId = Opportunity.Id %}
 
 {% if opportunityCount == 0 %}
   <div class="panel panel-default margin-t-md">
@@ -14,8 +15,8 @@
       <div class="card-body">
         <!--p>{{ opportunity.Summary }}</p-->
 
-        <button class="text-center btn btn-primary" data-toggle="collapse" data-target="#{{ Oppotunity.Id }}voldetails" role="button" aria-expanded="false" aria-controls="{{ Oppotunity.Id }}voldetails">Learn More</button>
-        <div class="collapse" id="{{ Oppotunity.Id }}voldetails">
+        <button class="text-center btn btn-primary" data-toggle="collapse" data-target="#{{ OppotunityId }}voldetails" role="button" aria-expanded="false" aria-controls="{{ OppotunityId }}voldetails">Learn More</button>
+        <div class="collapse" id="{{ OppotunityId }}voldetails">
         <p class="padding-lg">{{ opportunity.Summary }}</p>
 		    </div>
       </div>
