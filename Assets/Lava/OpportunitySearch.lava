@@ -9,13 +9,13 @@
 <div class="grid-responsive-2 padding-lg">
 {% for opportunity in Opportunities %}
     <div class="card ">
-      <h2 class="text-center"><i class='{{ opportunity.IconCssClass }}'></i> {{ opportunity.PublicName }}</h2>
+      <h4 class="text-center"><i class='{{ opportunity.IconCssClass }}'></i> {{ opportunity.PublicName }}</h4>
         <img alt="Image for {{ opportunity.PublicName }}" src="{{ opportunity.PhotoUrl }}" class="img-responsive margin-b-md">
       <div class="card-body">
         <!--p>{{ opportunity.Summary }}</p-->
 
-        <a class="text-center btn btn-primary" data-toggle="collapse" data-target="#{{ Oppotunity.Id }}" href="#voldetails" role="button" aria-expanded="false" aria-controls="voldetails">Learn More</a>
-        <div class="collapse" id="voldetails">
+        <button class="text-center btn btn-primary" data-toggle="collapse" data-target="#{{ Oppotunity.Id }}voldetails" role="button" aria-expanded="false" aria-controls="voldetails">Learn More</button>
+        <div class="collapse" id="{{ Oppotunity.Id }}voldetails">
         <p class="padding-lg">{{ opportunity.Summary }}</p>
 		    </div>
       </div>
