@@ -9,11 +9,11 @@
 
 <div class="grid-responsive-2 padding-lg">
 {% for opportunity in Opportunities %}
-    <div class="card ">
+    <div class="card">
         <img alt="Image for {{ opportunity.PublicName }}" src="{{ opportunity.PhotoUrl }}" class="img-responsive margin-b-md">
         <h4 class="text-center"><i class='{{ opportunity.IconCssClass }}'></i> {{ opportunity.PublicName }}</h4>
       <div class="card-body">
-        <!--p>{{ opportunity.Summary }}</p-->
+        <p>{{ opportunity.Summary }} | {{ Opportunity.Id }}</p>
 
         <button class="text-center btn btn-primary" data-toggle="collapse" data-target="#{{ OpportunityId }}voldetails" role="button" aria-expanded="false" aria-controls="{{ OpportunityId }}voldetails">Learn More</button>
         <div class="collapse" id="{{ OpportunityId }}voldetails">
