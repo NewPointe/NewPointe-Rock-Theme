@@ -1,5 +1,5 @@
 {% assign opportunityCount = Opportunities | Size %}
-{% assign OpportunityId = Opportunity.Id %}
+{% assign OpportunityId = Opportunity.Id | AsInteger %}
 
 {% if opportunityCount == 0 %}
   <div class="panel panel-default margin-t-md">
