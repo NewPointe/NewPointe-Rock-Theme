@@ -15,8 +15,8 @@
       <div class="card-body">
         <!--p>{{ opportunity.Summary }}</p-->
 
-        <button class="text-center btn btn-primary" data-toggle="collapse" data-target="#{{ OppotunityId }}voldetails" role="button" aria-expanded="false" aria-controls="{{ OppotunityId }}voldetails">Learn More</button>
-        <div class="collapse" id="{{ OppotunityId }}voldetails">
+        <button class="text-center btn btn-primary" data-toggle="collapse" data-target="#{{ OpportunityId }}voldetails" role="button" aria-expanded="false" aria-controls="{{ OpportunityId }}voldetails">Learn More</button>
+        <div class="collapse" id="{{ OpportunityId }}voldetails">
         <p class="padding-lg">{{ opportunity.Summary }}</p>
 		    </div>
       </div>
