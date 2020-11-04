@@ -17,6 +17,7 @@
         <div id="{{ opportunity.Id | AsInteger }}" class="collapse multi-collapse">
         <p class="padding-lg">{{ opportunity.Summary }}</p>
 		    </div>
+        <a class="btn btn-primary btn-sm" href="{{ DetailPage }}&OpportunityId={{ opportunity.Id }}" role="button">Sign Up</a>
       </div>
     </div>
   {% endfor %}
