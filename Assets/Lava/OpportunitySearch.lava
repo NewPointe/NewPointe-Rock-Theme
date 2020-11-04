@@ -13,10 +13,10 @@
         <img alt="Image for {{ opportunity.PublicName }}" src="{{ opportunity.PhotoUrl }}" class="img-responsive margin-b-md">
         <h4 class="text-center"><i class='{{ opportunity.IconCssClass }}'></i> {{ opportunity.PublicName }}</h4>
       <div class="card-body">
-        <p>{{ opportunity.Summary }} | {{ opportunity.Id | AsInteger }}</p>
+        <p>{{ opportunity.Summary }} | {{ OpportunityId }}</p>
 
-        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#learnmore">Learn More</button>
-        <div id="learnmore" class="collapse">
+        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#{{ OpportunityId }}">Learn More</button>
+        <div id="{{ OpportunityId }}" class="collapse multi-collapse">
         <p class="padding-lg">{{ opportunity.Summary }}</p>
 		    </div>
       </div>
@@ -26,5 +26,8 @@
 
 
 
-
-
+<script type="text/javascript">
+  $( document ).ready(function() {
+    $('.js-group-item').tooltip();
+  });
+</script>
