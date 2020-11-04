@@ -17,7 +17,11 @@
         <div id="{{ opportunity.Id | AsInteger }}" class="collapse multi-collapse">
         <p class="padding-lg">{{ opportunity.Summary }}</p>
 		    </div>
-        <a class="btn btn-primary" href="{{ DetailPage }}&OpportunityId={{ opportunity.Id }}" role="button">Sign Up</a>
+        {% if DetailPage contains "?" %}
+      <a class="btn btn-primary" href="{{ DetailPage }}&OpportunityId={{ opportunity.Id }}" role="button">Sign Up</a>
+    {% else %}
+      <a class="btn btn-primary" href="{{ DetailPage }}?OpportunityId={{ opportunity.Id }}" role="button">Sign Up</a>
+    {% endif %}
       </div>
     </div>
   {% endfor %}
