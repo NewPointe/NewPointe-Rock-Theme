@@ -15,8 +15,8 @@
       <div class="card-body">
         <p>{{ opportunity.Summary }} | {{ opportunity.Id | AsInteger }}</p>
 
-        <button class="text-center btn btn-primary" data-toggle="collapse" data-target="#{{ OpportunityId }}" role="button" aria-expanded="false" aria-controls="{{ OpportunityId }}">Learn More</button>
-        <div class="collapse" id="{{ OpportunityId }}">
+        <button class="text-center btn btn-primary" data-toggle="collapse" data-target="#learnmore" role="button" aria-expanded="false" aria-controls="learnmore">Learn More</button>
+        <div class="collapse" id="learnmore">
         <p class="padding-lg">{{ opportunity.Summary }}</p>
 		    </div>
       </div>
