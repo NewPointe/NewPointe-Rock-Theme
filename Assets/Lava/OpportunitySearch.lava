@@ -13,10 +13,10 @@
         <img alt="Image for {{ opportunity.PublicName }}" src="{{ opportunity.PhotoUrl }}" class="img-responsive margin-b-md">
         <h4 class="text-center"><i class='{{ opportunity.IconCssClass }}'></i> {{ opportunity.PublicName }}</h4>
       <div class="card-body">
-        <p>{{ opportunity.Summary }} | {{ OpportunityId }}</p>
+        <p>{{ opportunity.Summary }} | {{ opportunity.Id | AsInteger }}</p>
 
-        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#{{ OpportunityId }}">Learn More</button>
-        <div id="{{ OpportunityId }}" class="collapse multi-collapse">
+        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#{{ opportunity.Id | AsInteger }}">Learn More</button>
+        <div id="{{ opportunity.Id | AsInteger }}" class="collapse multi-collapse">
         <p class="padding-lg">{{ opportunity.Summary }}</p>
 		    </div>
       </div>
