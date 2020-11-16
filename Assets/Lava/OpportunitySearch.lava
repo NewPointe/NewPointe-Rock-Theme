@@ -11,7 +11,7 @@
 {% for opportunity in Opportunities %}
     <div class="card">
         <img alt="Image for {{ opportunity.PublicName }}" src="{{ opportunity.PhotoUrl }}" class="img-responsive margin-b-md">
-        <h4 class="text-center"><i class='{{ opportunity.IconCssClass }}'></i> {{ opportunity.PublicName }}</h4>
+        <h4 class="padding-md">{{ opportunity.PublicName }}</h4>
       <div class="card-body">
         <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#{{ opportunity.Id | AsInteger }}">Learn More</button>
         <div id="{{ opportunity.Id | AsInteger }}" class="collapse multi-collapse">
