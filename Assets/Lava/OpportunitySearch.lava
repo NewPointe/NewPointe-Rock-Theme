@@ -14,8 +14,8 @@
         <h4 class="padding-md">{{ opportunity.PublicName }}</h4>
       <div class="card-body">
         <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#{{ opportunity.Id | AsInteger }}">Learn More</button>
-          <div id="{{ opportunity.Id | AsInteger }}" class="collapse multi-collapse padding-t-none">
-          <p class="padding-md padding-t-sm">{{ opportunity.Summary }}</p>
+          <div id="{{ opportunity.Id | AsInteger }}" class="collapse multi-collapse">
+          <p class="padding-md">{{ opportunity.Summary }}</p>
   		    </div>
         {% if DetailPage contains "?" %}
       <a class="btn btn-primary" href="{{ DetailPage }}&OpportunityId={{ opportunity.Id }}" role="button">Get Info</a>
