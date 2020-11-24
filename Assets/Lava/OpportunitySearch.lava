@@ -18,9 +18,9 @@
           <p class="padding-md">{{ opportunity.Summary }}</p>
   		    </div>
         {% if DetailPage contains "?" %}
-      <a class="btn btn-primary" href="{{ DetailPage }}&OpportunityId={{ opportunity.Id }}" role="button">Get Info</a>
+      <a class="btn btn-primary" href="{{ DetailPage }}&OpportunityId={{ opportunity.Id }}" role="button">I'm Interested</a>
     {% else %}
-      <a class="btn btn-primary" href="{{ DetailPage }}?OpportunityId={{ opportunity.Id }}" role="button">Get Info</a>
+      <a class="btn btn-primary" href="{{ DetailPage }}?OpportunityId={{ opportunity.Id }}" role="button">I'm Interested</a>
     {% endif %}
       </div>
     </div>
