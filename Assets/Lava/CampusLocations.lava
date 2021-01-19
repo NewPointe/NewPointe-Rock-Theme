@@ -65,7 +65,9 @@
                     {% endif %}
                 {% endif %}
                 
+                {% for item in Items %}
                 <p>{{ item | Attribute: 'middleSchoolTimes' }}</p>
+                {% endfor %}
             </div>
         </div>
     </div>
