@@ -26,6 +26,21 @@
 			                {{ serviceTime.Time }}
 			            {%- endfor -%}
 			    </h5>
+                {% assign KidsServiceTimes = campus | Attribute:'kidsServiceTimes' %}
+			    {% if KidsServiceTimes != '' and KidsServiceTimes != '<p><br></p>' %}
+                <p style="color: #61a744;"><strong>{{ KidsServiceTimes }}</strong></p>
+                {% endif %}
+                
+                {% assign MiddleSchoolTimes = campus | Attribute:'middleSchoolTimes' %}
+			    {% if MiddleSchoolTimes != '' and MiddleSchoolTimes != '<p><br></p>' %}
+                <p style="color: #61a744;"><strong>{{ MiddleSchoolTimes }}</strong></p>
+                {% endif %}
+                
+                {% assign HighSchoolTimes = campus | Attribute:'highSchoolTimes' %}
+			    {% if HighSchoolTimes != '' and HighSchoolTimes != '<p><br></p>' %}
+                <p style="color: #61a744;"><strong>{{ HighSchoolTimes }}</strong></p>
+                {% endif %}
+                
                 {% assign LocationsPageDetails = campus | Attribute:'LocationsPageDetails' %}
 			    {% if LocationsPageDetails != '' and LocationsPageDetails != '<p><br></p>' %}
                     {{ LocationsPageDetails }}
@@ -64,6 +79,7 @@
     				    </p>
                     {% endif %}
                 {% endif %}
+                                
             </div>
         </div>
     </div>
