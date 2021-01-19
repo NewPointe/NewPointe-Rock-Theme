@@ -65,7 +65,7 @@
                     {% endif %}
                 {% endif %}
                 
-                <h6>{{ middleSchoolTimes }}</h6>
+                <p>{{ item | Attribute: 'middleSchoolTimes' }}</p>
             </div>
         </div>
     </div>
