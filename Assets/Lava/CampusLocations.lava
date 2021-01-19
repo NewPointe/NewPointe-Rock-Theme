@@ -65,10 +65,22 @@
                     {% endif %}
                 {% endif %}
                 
+                {% assign KidsServiceTimes = campus | Attribute:'kidsServiceTimes' %}
+			    {% if KidsServiceTimes != '' and KidsServiceTimes != '<p><br></p>' %}
+                <p>{{ KidsServiceTimes }}</p>
+                {% endif %}
+                
                 {% assign MiddleSchoolTimes = campus | Attribute:'middleSchoolTimes' %}
 			    {% if MiddleSchoolTimes != '' and MiddleSchoolTimes != '<p><br></p>' %}
                 <p>{{ MiddleSchoolTimes }}</p>
                 {% endif %}
+                
+                {% assign HighSchoolTimes = campus | Attribute:'highSchoolTimes' %}
+			    {% if HighSchoolTimes != '' and HighSchoolTimes != '<p><br></p>' %}
+                <p>{{ HighSchoolTimes }}</p>
+                {% endif %}
+                
+                
             </div>
         </div>
     </div>
