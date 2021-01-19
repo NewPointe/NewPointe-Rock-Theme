@@ -65,9 +65,10 @@
                     {% endif %}
                 {% endif %}
                 
-                {% for item in Items %}
-                <p>{{ item | Attribute: 'middleSchoolTimes' }}</p>
-                {% endfor %}
+                {% assign MiddleSchoolTimes = campus | Attribute:'middleSchoolTimes' %}
+			    {% if MiddleSchoolTimes != '' and MiddleSchoolTimes != '<p><br></p>' %}
+                <p>{{ MiddleSchoolTimes }}</p>
+                {% endif %}
             </div>
         </div>
     </div>
