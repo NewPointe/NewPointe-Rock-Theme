@@ -64,6 +64,8 @@
     				    </p>
                     {% endif %}
                 {% endif %}
+                
+                <h6>{{ middleSchoolTimes }}</h6>
             </div>
         </div>
     </div>
