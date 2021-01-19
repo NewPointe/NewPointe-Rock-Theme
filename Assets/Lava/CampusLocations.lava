@@ -28,17 +28,17 @@
 			    </h5>
                 {% assign KidsServiceTimes = campus | Attribute:'kidsServiceTimes' %}
 			    {% if KidsServiceTimes != '' and KidsServiceTimes != '<p><br></p>' %}
-                <h6>{{ KidsServiceTimes }}</h6>
+                <p style="color: #61a744;">{{ KidsServiceTimes }}</p>
                 {% endif %}
                 
                 {% assign MiddleSchoolTimes = campus | Attribute:'middleSchoolTimes' %}
 			    {% if MiddleSchoolTimes != '' and MiddleSchoolTimes != '<p><br></p>' %}
-                <h6>{{ MiddleSchoolTimes }}</h6>
+                <p style="color: #61a744;">{{ MiddleSchoolTimes }}</p>
                 {% endif %}
                 
                 {% assign HighSchoolTimes = campus | Attribute:'highSchoolTimes' %}
 			    {% if HighSchoolTimes != '' and HighSchoolTimes != '<p><br></p>' %}
-                <h6>{{ HighSchoolTimes }}</h6>
+                <p style="color: #61a744;">{{ HighSchoolTimes }}</p>
                 {% endif %}
                 
                 {% assign LocationsPageDetails = campus | Attribute:'LocationsPageDetails' %}
