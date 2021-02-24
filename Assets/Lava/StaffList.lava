@@ -16,7 +16,7 @@
     {% endif %}
 
 	<div class='text-center'>
-	    <a class="staff-img img-read-more" href="{% assign ContentChannelItemId = member.Id %}{[ FormatLink url:'{{ LinkedPages.DetailPage }}' keys:'ContentChannelItemId' ]}" title="{{ member.Title | Escape }}">
+	    <a class="staff-img" title="{{ member.Title | Escape }}">
             <img src="{{ memberPerson | Attribute:'StaffPhoto','Url' }}" />
         </a>
 	    <h5 class='margin-t-lg margin-b-sm'>{{ memberPerson.FullName | Escape }}</h5>
