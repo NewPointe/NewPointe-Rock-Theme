@@ -1,18 +1,29 @@
+{% comment %}
+    Get our array size, because if we don't return any groups, we'll want to
+    indicate that.
+{% endcomment %}
+{% assign arraysize = Groups | Size %}
+
+{% comment %}
+    Build the grid!
+{% endcomment %}
 <div class="section bg-black">
-
         <div class="grid-responsive-2 card-stack col-lg-6 col-sm-12">
-
             {% for Group in Groups %}
                 {% include '~~/Assets/Lava/GroupFinder_Card.lava' clickable:true %}
             {% endfor %}
-
         </div>
-
     <div class="noGroup text-center padding-md">
-        <h5 class="text-center">Looks like we don't have that group yet!<br>Do you want to start a group?</h5>
+        <h5 class="text-center">
+        {% comment %}
+            Display a message if we didn't return any groups.
+        {% endcomment %}
+        {% if arraysize == 0 %}
+            Looks like we don't have that group yet!
+        {% endif %}
+        <br>Do you want to start a group?</h5>
         <p class="text-center">
             <a class="btn btn-outline-primary" href="/form/315">Start a group of your own!</a>
         </p>
     </div>
-
 </div>
